@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Swing Cornos</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto&display=swap" rel="stylesheet">
+<style>
+/* Reset e fontes */
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Roboto', sans-serif; color:#fff; background: linear-gradient(135deg, #ff1c1c, #ff5733, #ff7f50); background-size: 400% 400%; animation:backgroundShift 12s infinite alternate; }
+
+/* Animação de fundo */
+@keyframes backgroundShift {
+  0% { background-position:0% 50%; }
+  50% { background-position:100% 50%; }
+  100% { background-position:0% 50%; }
+}
+
+/* Cabeçalho */
+header { text-align:center; padding:80px 20px; position:relative; }
+header h1 { font-family:'Playfair Display', serif; font-size:3.5rem; margin-bottom:15px; color:#ffd700; text-shadow: 0 0 15px #fff200, 0 0 25px #ffdd57; }
+header p { font-size:1.3rem; color:#fff8dc; text-shadow: 1px 1px rgba(0,0,0,0.5); }
+
+/* Navegação */
+nav { background-color: rgba(139,0,0,0.9); }
+nav ul { display:flex; justify-content:center; list-style:none; }
+nav ul li { margin:0 15px; }
+nav ul li a { color:#ffd700; text-decoration:none; font-weight:bold; padding:15px 0; display:block; transition:color 0.3s; font-family:'Playfair Display', serif; font-size:1.1rem; }
+nav ul li a:hover { color:#fff; }
+
+/* Seções */
+section { padding:80px 20px; text-align:center; }
+section h2 { font-family:'Playfair Display', serif; color:#ffd700; margin-bottom:30px; font-size:2.5rem; text-shadow: 0 0 10px #fff200, 0 0 20px #ffdd57; }
+section h2::after { content:''; display:block; width:80px; height:4px; background-color:#ffd700; margin:10px auto 0; border-radius:2px; }
+
+/* Cards */
+.cards { display:flex; justify-content:center; flex-wrap:wrap; gap:25px; }
+.card { background: rgba(255,255,255,0.05); border-radius:20px; padding:30px 20px; width:250px; box-shadow:0 8px 20px rgba(255,215,0,0.3); transition: transform 0.3s, box-shadow 0.3s; border:1px solid #ffd700; }
+.card:hover { transform:translateY(-8px); box-shadow:0 0 30px rgba(255,215,0,0.6); }
+.card h3 { color:#ffd700; margin-bottom:10px; font-family:'Playfair Display', serif; font-size:1.5rem; }
+
+/* Formulário */
+form { max-width:400px; margin:0 auto; background: rgba(0,0,0,0.25); padding:30px; border-radius:20px; box-shadow:0 0 20px rgba(255,215,0,0.4); }
+input, textarea, button { width:100%; padding:12px 15px; margin-bottom:15px; border-radius:10px; border:1px solid #ffd700; font-size:1rem; outline:none; background: rgba(0,0,0,0.2); color:#fff; font-family:'Roboto', sans-serif; }
+input::placeholder, textarea::placeholder { color: rgba(255,255,255,0.7); }
+button { background: #ff1c1c; color:#ffd700; border:none; cursor:pointer; font-weight:bold; transition: transform 0.2s, box-shadow 0.2s; font-size:1.1rem; }
+button:hover { transform:scale(1.05); box-shadow:0 0 20px #ffd700; }
+
+/* Rodapé */
+footer { background-color: rgba(139,0,0,0.9); color:#ffd700; text-align:center; padding:30px 20px; font-family:'Playfair Display', serif; }
+
+/* Botão flutuante do WhatsApp */
+.whatsapp-float {
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#ff1c1c;
+    color:#ffd700;
+    border-radius:50px;
+    padding:15px 20px;
+    font-size:1.5rem;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    z-index:1000;
+    text-decoration:none;
+    animation:whatsappPulse 1.5s infinite;
+    box-shadow:0 0 25px rgba(255,215,0,0.8);
+}
+@keyframes whatsappPulse {
+  0%,100% { transform: scale(1); box-shadow:0 0 25px rgba(255,215,0,0.8); }
+  50% { transform: scale(1.1); box-shadow:0 0 40px rgba(255,215,0,1); }
+}
+
+@media(max-width:768px){ .cards{ flex-direction:column; align-items:center;} header h1{ font-size:2.5rem; } }
+</style>
+</head>
+<body>
+
+<header>
+<h1>Swing Cornos</h1>
+<p>O grupo mais divertido da cidade!</p>
+</header>
+
+<nav>
+<ul>
+<li><a href="#sobre">Sobre</a></li>
+<li><a href="#membros">Membros</a></li>
+<li><a href="#contato">Contato</a></li>
+</ul>
+</nav>
+
+<section id="sobre">
+<h2>Sobre o Swing Cornos</h2>
+<p>Somos um grupo apaixonado por música, dança e diversão! Aqui, a amizade e o bom humor estão sempre em alta. Venha conhecer nosso universo animado e contagiante!</p>
+</section>
+
+<section id="membros">
+<h2>Nossos Membros</h2>
+<div class="cards">
+<div class="card">
+<h3>Milly</h3>
+<p>O espírito animador do grupo, sempre trazendo alegria e risadas.</p>
+</div>
+<div class="card">
+<h3>Aline</h3>
+<p>Rainha da dança e especialista em passos contagiantes de swing.</p>
+</div>
+<div class="card">
+<h3>Coringa</h3>
+<p>O imprevisível e divertido, sempre surpreendendo a todos!</p>
+</div>
+</div>
+</section>
+
+<section id="contato">
+<h2>Fale Conosco</h2>
+<p>Quer enviar uma mensagem para o grupo? Preencha seu nome e mensagem!</p>
+<form id="whatsappForm">
+<input type="text" id="nome" placeholder="Seu nome" required>
+<textarea id="mensagem" placeholder="Mensagem" rows="5" required></textarea>
+<button type="submit">Enviar pelo WhatsApp</button>
+</form>
+</section>
+
+<footer>
+&copy; 2026 Swing Cornos. Todos os direitos reservados.
+</footer>
+
+<a href="https://wa.me/5521999303395" target="_blank" class="whatsapp-float">💬</a>
+
+<script>
+document.getElementById('whatsappForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var nome = document.getElementById('nome').value;
+    var mensagem = document.getElementById('mensagem').value;
+    var whatsapp = '5521999303395';
+    var url = `https://wa.me/${whatsapp}?text=Olá! Meu nome é ${encodeURIComponent(nome)}. ${encodeURIComponent(mensagem)}`;
+    window.open(url, '_blank');
+});
+</script>
+
+</body>
+</html>
