@@ -129,6 +129,7 @@ footer { background-color: rgba(139,0,0,0.9); color:#ffd700; text-align:center; 
 &copy; 2026 Swing Cornos. Todos os direitos reservados.
 </footer>
 
+<!-- Botão flutuante WhatsApp -->
 <a href="https://wa.me/5521982859872" target="_blank" class="whatsapp-float">💬</a>
 
 <script>
@@ -136,11 +137,11 @@ document.getElementById('whatsappForm').addEventListener('submit', function(e){
     e.preventDefault();
     var nome = document.getElementById('nome').value;
     var mensagem = document.getElementById('mensagem').value;
-    var whatsapp = '5521982859872';
+    var whatsapp = '5521982859872'; // Número correto
     var url = `https://wa.me/${whatsapp}?text=Olá! Meu nome é ${encodeURIComponent(nome)}. ${encodeURIComponent(mensagem)}`;
-    window.open(url, '_blank');
+    window.open(url, '_blank'); // Abre no WhatsApp
 });
 </script>
 
 </body>
-</html>
+  </html>
